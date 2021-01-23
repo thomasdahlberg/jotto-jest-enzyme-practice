@@ -56,4 +56,8 @@ describe('if there are words guessed', () => {
     const guessedWordNode = findByTestAttr(wrapper, 'guessed-word');
     expect(guessedWordNode.length).toBe(guessedWords.length);
   });
+  test('renders guess number column', () => {
+    const guessedWordNumberColumn = findByTestAttr(wrapper, 'guessed-word-number');
+    expect(guessedWordNumberColumn.length).toBe(guessedWords.length);
+  });
 })
