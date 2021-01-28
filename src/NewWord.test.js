@@ -28,7 +28,7 @@ test('renders no button when `success` prop is false', () => {
   expect(button.length).toBe(0);
 });
 
-test('renders non-empty congrats message when `success` prop is true', () => {
+test('renders new word button when `success` prop is true', () => {
   const wrapper = setup({success: true});
   const button = findByTestAttr(wrapper, 'new-word-button');
   expect(button.length).toBe(1);
