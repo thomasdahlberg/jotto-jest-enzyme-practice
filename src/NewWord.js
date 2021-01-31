@@ -5,9 +5,13 @@ const NewWord = (props) => {
   if(props.success) {
     return (
       <div data-test="component-new-word">
-        <button data-test="new-word-button">New Word</button>
+        <button 
+          data-test="new-word-button"
+          onClick={props.resetAction}>
+            New Word
+        </button>
       </div>
-    )
+    );
   } else {
     return (
       <div data-test="component-new-word" />
@@ -15,8 +19,10 @@ const NewWord = (props) => {
   }
 }
 
+
 NewWord.propTypes = {
-  success: PropTypes.bool.isRequired
+  success: PropTypes.bool.isRequired,
+  resetAction: PropTypes.func,
 }
 
 export default NewWord;
