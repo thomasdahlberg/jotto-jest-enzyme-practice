@@ -37,6 +37,11 @@ describe('redux properties', () => {
     const getSecretWordProp = wrapper.instance().props.getSecretWord;
     expect(getSecretWordProp).toBeInstanceOf(Function);
   });
+  test('`resetGame` action creator is a function on the props', () => {
+    const wrapper = setup();
+    const getSecretWordProp = wrapper.instance().props.resetGame;
+    expect(getSecretWordProp).toBeInstanceOf(Function);
+  })
 });
 
 test('`getSecredWord` runs on App mount', () => {
@@ -50,4 +55,4 @@ test('`getSecredWord` runs on App mount', () => {
   wrapper.instance().componentDidMount();
   const getSecredWordCallCount = getSecretWordMock.mock.calls.length;
   expect(getSecredWordCallCount).toBe(1);
-})
+});
