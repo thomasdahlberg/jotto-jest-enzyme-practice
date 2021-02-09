@@ -4,8 +4,8 @@ import { shallow } from 'enzyme';
 
 import GiveUp from './GiveUp';
 
-const setup = () => {
-  return shallow(<GiveUp />);
+const setup = (success=false) => {
+  return shallow(<GiveUp success={success}/>);
 }
 
 describe('renders', () => {
@@ -14,10 +14,15 @@ describe('renders', () => {
     const component = findByTestAttr(wrapper, 'component-give-up');
     expect(component.length).toBe(1);
   });
-  test('renders `Give Up` button', () => {
+  test('renders `Give Up` button when success is false', () => {
     let wrapper = setup();
     const button = findByTestAttr(wrapper, 'give-up-button');
     expect(button.length).toBe(1);
+  });
+  test('does not render `Give Up` button when success is true', () => {
+    let wrapper = setup(true);
+    const button = findByTestAttr(wrapper, 'give-up-button');
+    expect(button.length).toBe(0);
   });
 
   describe('when `Give Up button clicked', () => {
